@@ -14,10 +14,62 @@ collections:
     folder: "src/data/products"
     create: true
     slug: "{{slug}}"
+
     fields:
       - { label: "Product Name", name: "name", widget: "string" }
+
       - { label: "Slug", name: "slug", widget: "string" }
+
       - { label: "Description", name: "description", widget: "text" }
+
       - { label: "Price", name: "price", widget: "number", value_type: "float" }
+
       - { label: "Category", name: "category", widget: "string" }
+
       - { label: "Main Image", name: "image", widget: "image" }
+
+      - label: "Additional Images"
+        name: "images"
+        widget: "list"
+        field:
+          label: "Image"
+          name: "image"
+          widget: "image"
+
+      - label: "Specifications"
+        name: "specs"
+        widget: "object"
+        fields:
+          - { label: "Brand", name: "Brand", widget: "string", required: false }
+          - { label: "Manufacturer", name: "Manufacturer", widget: "string", required: false }
+          - { label: "Company", name: "Company", widget: "string", required: false }
+          - { label: "Material", name: "Material", widget: "string", required: false }
+          - { label: "Flux", name: "Flux", widget: "string", required: false }
+          - { label: "Alloy", name: "Alloy", widget: "string", required: false }
+          - { label: "Diameter", name: "Diameter", widget: "string", required: false }
+          - { label: "Weight", name: "Weight", widget: "string", required: false }
+          - { label: "Original Weight", name: "Original Weight", widget: "string", required: false }
+          - { label: "Standard", name: "Standard", widget: "string", required: false }
+          - { label: "Batch", name: "Batch", widget: "string", required: false }
+          - { label: "Batch No.", name: "Batch No.", widget: "string", required: false }
+          - { label: "Item No.", name: "Item No.", widget: "string", required: false }
+          - { label: "Product", name: "Product", widget: "string", required: false }
+          - { label: "Manufactured", name: "Manufactured", widget: "string", required: false }
+          - { label: "Division", name: "Division", widget: "string", required: false }
+          - { label: "Grade", name: "Grade", widget: "string", required: false }
+          - { label: "Barcode", name: "Barcode", widget: "string", required: false }
+          - { label: "Type", name: "Type", widget: "string", required: false }
+          - { label: "Core", name: "Core", widget: "string", required: false }
+          - { label: "Residue", name: "Residue", widget: "string", required: false }
+          - { label: "Cleaning", name: "Cleaning", widget: "string", required: false }
+          - { label: "Application", name: "Application", widget: "string", required: false }
+          - { label: "Supply Format", name: "Supply Format", widget: "string", required: false }
+          - { label: "Roll / Spool", name: "Roll / Spool", widget: "string", required: false }
+
+      - label: "Lengths"
+        name: "lengths"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Length", name: "name", widget: "string" }
+          - { label: "Price", name: "price", widget: "number", value_type: "float" }
