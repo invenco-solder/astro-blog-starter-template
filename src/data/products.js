@@ -3,7 +3,7 @@ export const products = [
     name: "99C Tin/Copper Solder Wire",
     slug: "99c-tin-copper",
     description:
-      "Lead Free 99C Tin/Copper solder wire with 399 Flux 5 Core. Available in 0.7mm diameter. Supplied cut to your selected length and shipped in coil form.",
+      "Lead Free 99C Tin/Copper solder wire with 399 Flux 5 Core. 0.7mm diameter. Available in selected lengths and supplied in coil form.",
     price: 1.89,
     image: "/products/99C.jpg",
     category: "Solder Wire",
@@ -14,8 +14,7 @@ export const products = [
       "Diameter": "0.7mm",
       "Standard": "EN 29463 S-Sn89Cu1",
       "Batch": "1476/811",
-      "Original Weight": "500g",
-      "Product Type": "Lead Free Solder Wire"
+      "Original Weight": "500g"
     },
 
     lengths: [
@@ -33,7 +32,7 @@ export const products = [
     name: "Alpha-Fry SAC305 0.4mm Lead Free Solder Wire",
     slug: "alpha-fry-sac305",
     description:
-      "GreenLine Alpha-Fry SAC305 lead free solder wire manufactured by Alpha-Fry Technologies, a Cookson Electronics Company. Features 1 Core 2.2% flux and 0.4mm diameter. Supplied cut to your selected length and shipped in coil form.",
+      "GreenLine Alpha-Fry SAC305 lead free solder wire manufactured by Alpha-Fry Technologies, a Cookson Electronics Company. Features 1 Core 2.2% flux and 0.4mm diameter.",
     price: 1.89,
     image: "/products/alpha-fry-04mm.jpg",
     category: "Solder Wire",
@@ -64,16 +63,13 @@ export const products = [
     ]
   },
 
-    {
+  {
     name: "Invenco 99C 3.00mm 250g Premium Plumbing Solder Wire",
     slug: "invenco-99c-3mm-250g",
     description:
-      "Invenco Engineering Industries Lead Free Grade 99C Premium Plumbing Solder Wire. This complete 250g roll features a 3.00mm diameter and is supplied on a green spool. Ideal for plumbing soldering applications.",
-
+      "Invenco Engineering Industries Solder Division Lead Free Grade 99C Premium Plumbing Solder Wire. Complete 250g roll with a 3.00mm diameter. Supplied on a green spool and suitable for plumbing soldering applications.",
     price: 13.99,
-
     image: "/products/s-I1600 (2).webp",
-
     category: "Plumbing Solder Wire",
 
     specs: {
