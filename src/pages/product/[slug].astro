@@ -9,6 +9,11 @@ export function getStaticPaths() {
 }
 
 const { product } = Astro.props;
+
+// Supports both old products with "image" and new products with "images"
+const productImages = product.images?.length
+  ? product.images
+  : [product.image];
 ---
 
 <!doctype html>
@@ -139,6 +144,40 @@ const { product } = Astro.props;
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+
+    /* IMAGE THUMBNAILS */
+
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+    }
+
+    .thumbnail {
+      flex: 0 0 85px;
+      height: 85px;
+      padding: 0;
+      background: #181b1d;
+      border: 1px solid #303438;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .thumbnail:hover {
+      border-color: #ff6a21;
+    }
+
+    .thumbnail.active {
+      border: 2px solid #ff6a21;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .eyebrow {
@@ -352,6 +391,11 @@ const { product } = Astro.props;
       .buy-area {
         grid-template-columns: 80px 1fr;
       }
+
+      .thumbnail {
+        flex-basis: 70px;
+        height: 70px;
+      }
     }
   </style>
 </head>
@@ -408,18 +452,52 @@ const { product } = Astro.props;
     <div class="product-grid">
 
 
-      <!-- IMAGE -->
+      <!-- PRODUCT IMAGE GALLERY -->
 
       <div class="gallery">
 
         <div class="main-image">
 
           <img
-            src={product.image}
+            id="mainProductImage"
+            src={productImages[0]}
             alt={product.name}
           />
 
         </div>
+
+
+        <!-- THUMBNAILS -->
+
+        {
+          productImages.length > 1 && (
+
+            <div class="thumbnails">
+
+              {
+                productImages.map((image, index) => (
+
+                  <button
+                    class:list={["thumbnail", { active: index === 0 }]}
+                    data-image={image}
+                    type="button"
+                    aria-label={`View product image ${index + 1}`}
+                  >
+
+                    <img
+                      src={image}
+                      alt={`${product.name} image ${index + 1}`}
+                    />
+
+                  </button>
+
+                ))
+              }
+
+            </div>
+
+          )
+        }
 
       </div>
 
@@ -505,18 +583,25 @@ const { product } = Astro.props;
         </div>
 
 
-        <div class="shipping">
+        {
+          product.lengths &&
+          product.lengths.length > 0 && (
 
-          <strong>
-            CUT TO YOUR REQUIRED LENGTH
-          </strong>
+            <div class="shipping">
 
-          <p>
-            Your selected length will be cut from
-            the solder wire and supplied in coil form.
-          </p>
+              <strong>
+                CUT TO YOUR REQUIRED LENGTH
+              </strong>
 
-        </div>
+              <p>
+                Your selected length will be cut from
+                the solder wire and supplied in coil form.
+              </p>
+
+            </div>
+
+          )
+        }
 
       </div>
 
@@ -579,10 +664,17 @@ const { product } = Astro.props;
             packaged for shipping.
           </p>
 
-          <p>
-            Solder wire lengths are cut to the
-            selected size and supplied in coil form.
-          </p>
+          {
+            product.lengths &&
+            product.lengths.length > 0 && (
+
+              <p>
+                Solder wire lengths are cut to the
+                selected size and supplied in coil form.
+              </p>
+
+            )
+          }
 
         </div>
 
@@ -622,6 +714,45 @@ const { product } = Astro.props;
 
 
 <script>
+
+  // IMAGE GALLERY
+
+  const mainImage =
+    document.querySelector("#mainProductImage");
+
+  const thumbnails =
+    document.querySelectorAll(".thumbnail");
+
+
+  thumbnails.forEach((thumbnail) => {
+
+    thumbnail.addEventListener("click", () => {
+
+      const image =
+        thumbnail.getAttribute("data-image");
+
+      if (image && mainImage) {
+
+        mainImage.src = image;
+
+      }
+
+
+      thumbnails.forEach((item) => {
+
+        item.classList.remove("active");
+
+      });
+
+
+      thumbnail.classList.add("active");
+
+    });
+
+  });
+
+
+  // LENGTH / PRICE SELECTOR
 
   const select =
     document.querySelector("#length");
