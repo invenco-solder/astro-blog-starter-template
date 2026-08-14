@@ -1,1 +1,21 @@
+backend:
+  name: github
+  repo: invenco-solder/astro-blog-starter-template
+  branch: main
 
+media_folder: "public/products"
+public_folder: "/products"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "src/data/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "name", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Price", name: "price", widget: "number", value_type: "float" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Main Image", name: "image", widget: "image" }
