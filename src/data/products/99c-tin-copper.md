@@ -7,8 +7,8 @@ price: 1.89
 category: Solder Wire
 image: /products/99C.jpg
 images:
-  - /products/99C.jpg
   - /products/99C 5.jpg
+  - /products/99C.jpg
 specs:
   Material: 99C Tin/Copper
   Flux: 399 Flux 5 Core
