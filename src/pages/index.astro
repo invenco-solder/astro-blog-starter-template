@@ -1,793 +1,1083 @@
 ---
 const products = [
   {
-    name: "Premium Solder Wire",
-    description: "Professional solder wire for electrical and electronic applications.",
-    price: "£9.99",
+    name: "99C Tin/Copper Solder Wire",
+    description:
+      "Lead Free 99C Tin/Copper solder wire with 399 Flux 5 Core. 0.7mm diameter.",
+    price: "From £1.89",
+    image: "/products/99C.jpg",
+    url: "/product/99c-tin-copper",
   },
   {
-  name: "99C Tin/Copper Solder Wire",
-  description:
-    "Lead Free 99C Tin/Copper solder wire with 399 Flux 5 Core. 0.7mm diameter.",
-  price: "From £1.89",
-  image: "/products/99C.jpg",
-  url: "/product/99c-tin-copper",
-},
+    name: "Tin / Lead Solder",
+    description:
+      "Reliable solder wire for professional electrical and electronic applications.",
+    price: "£12.99",
+    image: "",
+    url: "#",
+  },
   {
     name: "Soldering Flux",
-    description: "Quality flux for clean and reliable solder joints.",
+    description:
+      "Quality flux for clean and reliable solder joints.",
     price: "£6.99",
+    image: "",
+    url: "#",
   },
   {
     name: "Soldering Kit",
-    description: "Essential soldering supplies for your workbench.",
+    description:
+      "Essential soldering supplies for your workbench.",
     price: "£19.99",
+    image: "",
+    url: "#",
   },
 ];
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
 
-    <title>Invenco Solder | Electrical & Soldering Supplies</title>
+<head>
 
-    <meta
-      name="description"
-      content="Invenco Solder - electrical solder, tin lead solder and soldering supplies."
-    />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
 
-    <style>
-      :global(*) {
-        box-sizing: border-box;
-      }
+  <title>Invenco Solder | Electrical & Soldering Supplies</title>
 
-      :global(html) {
-        scroll-behavior: smooth;
-      }
+  <meta
+    name="description"
+    content="Invenco Solder - electrical solder, tin lead solder and soldering supplies."
+  />
 
-      :global(body) {
-        margin: 0;
-        background: #101214;
-        color: #f5f5f5;
-        font-family: Arial, Helvetica, sans-serif;
-      }
+  <style>
 
-      :global(a) {
-        color: inherit;
-        text-decoration: none;
-      }
+    :global(*) {
+      box-sizing: border-box;
+    }
 
-      .container {
-        width: min(1150px, calc(100% - 40px));
-        margin: auto;
-      }
+    :global(html) {
+      scroll-behavior: smooth;
+    }
 
-      /* HEADER */
+    :global(body) {
+      margin: 0;
+      background: #101214;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-      header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,.1);
-      }
+    :global(a) {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      nav {
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+    .container {
+      width: min(1150px, calc(100% - 40px));
+      margin: auto;
+    }
 
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 800;
-        font-size: 20px;
-      }
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      z-index: 10;
+    }
 
-      .logo-box {
-        width: 38px;
-        height: 38px;
-        display: grid;
-        place-items: center;
-        background: #ff6a21;
-        color: #111;
-        font-weight: 900;
-      }
+    nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-      .logo small {
-        display: block;
-        color: #ff6a21;
-        font-size: 8px;
-        letter-spacing: 3px;
-      }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .logo-box {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: #ff6a21;
+      color: #111;
+      font-weight: 900;
+    }
+
+    .logo small {
+      display: block;
+      color: #ff6a21;
+      font-size: 8px;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover {
+      color: #ff6a21;
+    }
+
+    .hero {
+      min-height: 720px;
+      padding-top: 80px;
+      display: flex;
+      align-items: center;
+
+      background:
+        radial-gradient(
+          circle at 75% 50%,
+          rgba(255,106,33,.16),
+          transparent 30%
+        ),
+        #101214;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #ff6a21;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      margin: 20px 0;
+      font-size: clamp(55px, 7vw, 95px);
+      line-height: .86;
+      text-transform: uppercase;
+      letter-spacing: -3px;
+    }
+
+    h1 span,
+    h2 span {
+      color: #ff6a21;
+    }
+
+    .hero p {
+      max-width: 500px;
+      color: #92979a;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      padding: 16px 24px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .primary {
+      background: #ff6a21;
+      color: #111;
+    }
+
+    .secondary {
+      border: 1px solid #444;
+    }
+
+    .secondary:hover {
+      border-color: #ff6a21;
+      color: #ff6a21;
+    }
+
+    .hero-product {
+      height: 430px;
+      border: 1px solid #333;
+
+      background:
+        linear-gradient(
+          135deg,
+          #1d2124,
+          #0c0e10
+        );
+
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-product::before {
+      content: "";
+      width: 280px;
+      height: 280px;
+      border: 35px solid #999;
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 70px rgba(255,106,33,.15);
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      margin-bottom: 45px;
+    }
+
+    .section-title small {
+      color: #ff6a21;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      margin: 12px 0 0;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    #shop {
+      background: #0b0d0f;
+      border-top: 1px solid #292d30;
+      border-bottom: 1px solid #292d30;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .product {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      background: #151719;
+      border: 1px solid #292d30;
+      transition: .25s;
+      overflow: hidden;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      border-color: #ff6a21;
+    }
+
+    .product-image {
+      height: 260px;
+      background: #1b1e20;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .3s;
+    }
+
+    .product:hover img {
+      transform: scale(1.04);
+    }
+
+    .placeholder {
+      color: #555;
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .product p {
+      color: #777;
+      font-size: 12px;
+      line-height: 1.6;
+      min-height: 58px;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #292d30;
+      padding-top: 15px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ff6a21;
+    }
+
+    .view-product {
+      padding: 10px 14px;
+      background: #ff6a21;
+      color: #111;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .category {
+      min-height: 250px;
+      padding: 30px;
+      background: #151719;
+      border: 1px solid #292d30;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      transition: .25s;
+    }
+
+    .category:hover {
+      border-color: #ff6a21;
+    }
+
+    .category span {
+      color: #ff6a21;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .category h3 {
+      margin: 10px 0;
+      font-size: 30px;
+    }
+
+    .category p {
+      color: #777;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .about {
+      background: #151719;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 450px;
+
+      border: 1px solid #333;
+
+      background:
+        repeating-linear-gradient(
+          45deg,
+          #1c2022,
+          #1c2022 10px,
+          #171a1c 10px,
+          #171a1c 20px
+        );
+
+      display: grid;
+      place-items: center;
+    }
+
+    .about-image strong {
+      color: #ff6a21;
+      font-size: 80px;
+    }
+
+    .about-text p {
+      color: #888;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 60px 0 25px;
+      background: #08090a;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    footer h3 {
+      color: #ff6a21;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    footer p,
+    footer a {
+      color: #666;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .copyright {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #222;
+      color: #555;
+      font-size: 10px;
+    }
+
+    @media (max-width: 850px) {
 
       .nav-links {
-        display: flex;
-        gap: 30px;
-        color: #aaa;
-        font-size: 13px;
+        display: none;
       }
 
-      .nav-links a:hover {
-        color: #ff6a21;
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
       }
-
-      /* HERO */
 
       .hero {
-        min-height: 720px;
-        padding-top: 80px;
-        display: flex;
-        align-items: center;
-        background:
-          radial-gradient(circle at 75% 50%, rgba(255,106,33,.16), transparent 30%),
-          #101214;
+        padding: 130px 0 80px;
       }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-      }
-
-      .eyebrow {
-        color: #ff6a21;
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 3px;
-      }
-
-      h1 {
-        margin: 20px 0;
-        font-size: clamp(55px, 7vw, 95px);
-        line-height: .86;
-        text-transform: uppercase;
-        letter-spacing: -3px;
-      }
-
-      h1 span {
-        color: #ff6a21;
-      }
-
-      .hero p {
-        max-width: 500px;
-        color: #92979a;
-        line-height: 1.8;
-        font-size: 15px;
-      }
-
-      .buttons {
-        display: flex;
-        gap: 12px;
-        margin-top: 30px;
-      }
-
-      .button {
-        padding: 16px 24px;
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-
-      .primary {
-        background: #ff6a21;
-        color: #111;
-      }
-
-      .secondary {
-        border: 1px solid #444;
-      }
-
-      .secondary:hover {
-        border-color: #ff6a21;
-        color: #ff6a21;
-      }
-
-      /* HERO PRODUCT */
 
       .hero-product {
-        height: 430px;
-        border: 1px solid #333;
-        background:
-          linear-gradient(135deg, #1d2124, #0c0e10);
-        display: grid;
-        place-items: center;
-        position: relative;
-      }
-
-      .hero-product::before {
-        content: "";
-        width: 280px;
-        height: 280px;
-        border: 35px solid #999;
-        border-radius: 50%;
-        box-shadow: 0 0 70px rgba(255,106,33,.15);
-      }
-
-      .product-label {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        color: #666;
-        font-size: 9px;
-        letter-spacing: 2px;
-      }
-
-      .hero-product-card {
-        position: absolute;
-        bottom: 25px;
-        right: 25px;
-        background: #151719;
-        padding: 18px 22px;
-        border-left: 3px solid #ff6a21;
-      }
-
-      .hero-product-card small {
-        color: #ff6a21;
-        display: block;
-        font-size: 8px;
-        letter-spacing: 2px;
-      }
-
-      .hero-product-card strong {
-        display: block;
-        margin-top: 5px;
-      }
-
-      /* SECTION */
-
-      section {
-        padding: 100px 0;
-      }
-
-      .section-title {
-        margin-bottom: 45px;
-      }
-
-      .section-title small {
-        color: #ff6a21;
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 3px;
-      }
-
-      h2 {
-        margin: 12px 0 0;
-        font-size: clamp(42px, 6vw, 70px);
-        line-height: .9;
-        text-transform: uppercase;
-      }
-
-      h2 span {
-        color: #ff6a21;
-      }
-
-      /* PRODUCTS */
-
-      #shop {
-        background: #0b0d0f;
-        border-top: 1px solid #292d30;
-        border-bottom: 1px solid #292d30;
+        height: 350px;
       }
 
       .products {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
       }
-
-      .product {
-        background: #151719;
-        border: 1px solid #292d30;
-        transition: .25s;
-      }
-
-      .product:hover {
-        transform: translateY(-5px);
-        border-color: #ff6a21;
-      }
-
-      .product-image {
-        height: 260px;
-        background:
-          linear-gradient(135deg, #202427, #111315);
-        display: grid;
-        place-items: center;
-        color: #555;
-        font-size: 9px;
-        letter-spacing: 2px;
-      }
-
-      .product-image::after {
-        content: "PRODUCT IMAGE";
-      }
-
-      .product-info {
-        padding: 20px;
-      }
-
-      .product h3 {
-        margin: 0;
-        font-size: 20px;
-      }
-
-      .product p {
-        color: #777;
-        font-size: 12px;
-        line-height: 1.6;
-        min-height: 58px;
-      }
-
-      .product-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-top: 1px solid #292d30;
-        padding-top: 15px;
-      }
-
-      .price {
-        font-size: 22px;
-        font-weight: 800;
-      }
-
-      .add {
-        border: 0;
-        background: #ff6a21;
-        color: #111;
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
-        cursor: pointer;
-      }
-
-      /* CATEGORIES */
 
       .categories {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-      }
-
-      .category {
-        min-height: 250px;
-        padding: 30px;
-        background: #151719;
-        border: 1px solid #292d30;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        transition: .25s;
-      }
-
-      .category:hover {
-        border-color: #ff6a21;
-      }
-
-      .category span {
-        color: #ff6a21;
-        font-size: 10px;
-        letter-spacing: 2px;
-      }
-
-      .category h3 {
-        margin: 10px 0;
-        font-size: 30px;
-      }
-
-      .category p {
-        color: #777;
-        font-size: 12px;
-        line-height: 1.6;
-      }
-
-      /* ABOUT */
-
-      .about {
-        background: #151719;
-      }
-
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
-      }
-
-      .about-image {
-        min-height: 450px;
-        border: 1px solid #333;
-        background:
-          repeating-linear-gradient(
-            45deg,
-            #1c2022,
-            #1c2022 10px,
-            #171a1c 10px,
-            #171a1c 20px
-          );
-        display: grid;
-        place-items: center;
-      }
-
-      .about-image strong {
-        color: #ff6a21;
-        font-size: 80px;
-      }
-
-      .about-text p {
-        color: #888;
-        line-height: 1.8;
-        font-size: 14px;
-      }
-
-      /* FOOTER */
-
-      footer {
-        padding: 60px 0 25px;
-        background: #08090a;
+        grid-template-columns: 1fr;
       }
 
       .footer-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        gap: 50px;
+        grid-template-columns: 1fr;
       }
 
-      footer h3 {
-        margin-top: 0;
-        color: #ff6a21;
-        font-size: 12px;
-        letter-spacing: 2px;
+    }
+
+    @media (max-width: 550px) {
+
+      .container {
+        width: calc(100% - 28px);
       }
 
-      footer p,
-      footer a {
-        color: #666;
-        font-size: 12px;
-        line-height: 2;
+      .products {
+        grid-template-columns: 1fr;
       }
 
-      .copyright {
-        margin-top: 50px;
-        padding-top: 20px;
-        border-top: 1px solid #222;
-        color: #555;
-        font-size: 10px;
+      .buttons {
+        flex-direction: column;
       }
 
-      /* MOBILE */
-
-      @media (max-width: 850px) {
-        .nav-links {
-          display: none;
-        }
-
-        .hero-grid,
-        .about-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .hero {
-          padding: 130px 0 80px;
-        }
-
-        .hero-product {
-          height: 350px;
-        }
-
-        .products {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .categories {
-          grid-template-columns: 1fr;
-        }
-
-        .footer-grid {
-          grid-template-columns: 1fr;
-        }
+      .button {
+        text-align: center;
       }
 
-      @media (max-width: 550px) {
-        .container {
-          width: calc(100% - 28px);
-        }
-
-        .products {
-          grid-template-columns: 1fr;
-        }
-
-        .buttons {
-          flex-direction: column;
-        }
-
-        .button {
-          text-align: center;
-        }
-
-        h1 {
-          font-size: 56px;
-        }
+      h1 {
+        font-size: 56px;
       }
-    </style>
-  </head>
 
-  <body>
+    }
 
-    <header>
-      <div class="container">
-        <nav>
-          <a href="/" class="logo">
-            <span class="logo-box">IS</span>
-            <span>
-              INVENCO
-              <small>SOLDER</small>
-            </span>
-          </a>
+  </style>
 
-          <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="#shop">Shop</a>
-            <a href="#categories">Categories</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="container">
+
+    <nav>
+
+      <a href="/" class="logo">
+
+        <span class="logo-box">
+          IS
+        </span>
+
+        <span>
+          INVENCO
+          <small>SOLDER</small>
+        </span>
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="/">
+          Home
+        </a>
+
+        <a href="#shop">
+          Shop
+        </a>
+
+        <a href="#categories">
+          Categories
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
       </div>
-    </header>
 
-    <main>
+    </nav>
 
-      <section class="hero">
-        <div class="container hero-grid">
+  </div>
 
-          <div>
-            <div class="eyebrow">
-              PROFESSIONAL SOLDERING SUPPLIES
-            </div>
+</header>
 
-            <h1>
-              SOLDERING
-              <br />
-              <span>BUILT FOR THE JOB.</span>
-            </h1>
 
-            <p>
-              Quality solder and electrical supplies for professionals,
-              engineers, workshops, makers and repair specialists.
-            </p>
+<main>
 
-            <div class="buttons">
-              <a href="#shop" class="button primary">
-                Shop Products →
-              </a>
 
-              <a href="#categories" class="button secondary">
-                Explore Categories
-              </a>
-            </div>
-          </div>
+  <!-- HERO -->
 
-          <div class="hero-product">
-            <div class="product-label">
-              INVENCO SOLDER / PRECISION SUPPLIES
-            </div>
+  <section class="hero">
 
-            <div class="hero-product-card">
-              <small>PROFESSIONAL RANGE</small>
-              <strong>Electrical Solder & Supplies</strong>
-            </div>
-          </div>
+    <div class="container hero-grid">
 
-        </div>
-      </section>
+      <div>
 
-      <section id="shop">
-
-        <div class="container">
-
-          <div class="section-title">
-            <small>01 / SHOP</small>
-            <h2>
-              FEATURED
-              <br />
-              <span>PRODUCTS.</span>
-            </h2>
-          </div>
-
-          <div class="products">
-
-            {products.map((product) => (
-              <article class="product">
-
-                <div class="product-image"></div>
-
-                <div class="product-info">
-
-                  <h3>{product.name}</h3>
-
-                  <p>{product.description}</p>
-
-                  <div class="product-bottom">
-                    <span class="price">{product.price}</span>
-                    <button class="add">+</button>
-                  </div>
-
-                </div>
-
-              </article>
-            ))}
-
-          </div>
-
+        <div class="eyebrow">
+          PROFESSIONAL SOLDERING SUPPLIES
         </div>
 
-      </section>
 
-      <section id="categories">
+        <h1>
 
-        <div class="container">
+          SOLDERING
 
-          <div class="section-title">
-            <small>02 / CATEGORIES</small>
-            <h2>
-              EVERYTHING FOR
-              <br />
-              <span>THE WORKBENCH.</span>
-            </h2>
-          </div>
+          <br />
 
-          <div class="categories">
+          <span>
+            BUILT FOR THE JOB.
+          </span>
 
-            <a href="#shop" class="category">
-              <span>01</span>
-              <h3>Solder Wire</h3>
-              <p>
-                Professional solder wire for electrical and electronic work.
-              </p>
-            </a>
+        </h1>
 
-            <a href="#shop" class="category">
-              <span>02</span>
-              <h3>Tin / Lead</h3>
-              <p>
-                Reliable tin and lead solder products for soldering applications.
-              </p>
-            </a>
 
-            <a href="#shop" class="category">
-              <span>03</span>
-              <h3>Accessories</h3>
-              <p>
-                Flux and other essential soldering and electrical supplies.
-              </p>
-            </a>
+        <p>
 
-          </div>
+          Quality solder and electrical supplies
+          for professionals, engineers, workshops,
+          makers and repair specialists.
 
-        </div>
+        </p>
 
-      </section>
 
-      <section id="about" class="about">
-
-        <div class="container about-grid">
-
-          <div class="about-image">
-            <strong>IS</strong>
-          </div>
-
-          <div class="about-text">
-
-            <div class="section-title">
-              <small>03 / ABOUT INVENCO</small>
-
-              <h2>
-                QUALITY
-                <br />
-                <span>MATTERS.</span>
-              </h2>
-            </div>
-
-            <p>
-              Invenco Solder supplies soldering and electrical products
-              designed for reliable everyday use.
-            </p>
-
-            <p>
-              From professional workshops to electronics benches and
-              repair stations, we're focused on providing dependable
-              products and straightforward service.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <section id="contact">
-
-        <div class="container">
-
-          <div class="section-title">
-            <small>04 / CONTACT</small>
-
-            <h2>
-              NEED
-              <br />
-              <span>HELP?</span>
-            </h2>
-          </div>
-
-          <p style="color:#888; max-width:500px; line-height:1.8;">
-            Have a question about a product or an order?
-            Get in touch with the Invenco Solder team.
-          </p>
+        <div class="buttons">
 
           <a
-            href="mailto:info@invencosolder.co.uk"
+            href="#shop"
             class="button primary"
-            style="display:inline-block; margin-top:20px;"
           >
-            Email Us →
+            Shop Products →
+          </a>
+
+
+          <a
+            href="#categories"
+            class="button secondary"
+          >
+            Explore Categories
           </a>
 
         </div>
 
-      </section>
+      </div>
 
-    </main>
 
-    <footer>
+      <div class="hero-product"></div>
 
-      <div class="container">
+    </div>
 
-        <div class="footer-grid">
+  </section>
 
-          <div>
-            <div class="logo">
-              <span class="logo-box">IS</span>
-              <span>
-                INVENCO
-                <small>SOLDER</small>
-              </span>
-            </div>
 
-            <p>
-              Professional soldering and electrical supplies.
-            </p>
-          </div>
 
-          <div>
-            <h3>SHOP</h3>
-            <a href="#shop">Products</a><br />
-            <a href="#categories">Categories</a>
-          </div>
+  <!-- SHOP -->
 
-          <div>
-            <h3>COMPANY</h3>
-            <a href="#about">About</a><br />
-            <a href="#contact">Contact</a>
-          </div>
+  <section id="shop">
 
-        </div>
+    <div class="container">
 
-        <div class="copyright">
-          © {new Date().getFullYear()} Invenco Solder. All rights reserved.
-        </div>
+
+      <div class="section-title">
+
+        <small>
+          01 / SHOP
+        </small>
+
+        <h2>
+
+          FEATURED
+
+          <br />
+
+          <span>
+            PRODUCTS.
+          </span>
+
+        </h2>
 
       </div>
 
-    </footer>
 
-  </body>
+      <div class="products">
+
+
+        {products.map((product) => (
+
+          <a
+            href={product.url}
+            class="product"
+          >
+
+
+            <div class="product-image">
+
+              {product.image ? (
+
+                <img
+                  src={product.image}
+                  alt={product.name}
+                />
+
+              ) : (
+
+                <span class="placeholder">
+                  PRODUCT IMAGE
+                </span>
+
+              )}
+
+            </div>
+
+
+            <div class="product-info">
+
+
+              <h3>
+                {product.name}
+              </h3>
+
+
+              <p>
+                {product.description}
+              </p>
+
+
+              <div class="product-bottom">
+
+
+                <span class="price">
+                  {product.price}
+                </span>
+
+
+                <span class="view-product">
+                  VIEW PRODUCT →
+                </span>
+
+
+              </div>
+
+
+            </div>
+
+
+          </a>
+
+        ))}
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CATEGORIES -->
+
+  <section id="categories">
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <small>
+          02 / CATEGORIES
+        </small>
+
+        <h2>
+
+          EVERYTHING FOR
+
+          <br />
+
+          <span>
+            THE WORKBENCH.
+          </span>
+
+        </h2>
+
+      </div>
+
+
+      <div class="categories">
+
+
+        <a
+          href="#shop"
+          class="category"
+        >
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            Solder Wire
+          </h3>
+
+          <p>
+            Professional solder wire
+            for electrical and electronic work.
+          </p>
+
+        </a>
+
+
+        <a
+          href="#shop"
+          class="category"
+        >
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            Tin / Lead
+          </h3>
+
+          <p>
+            Reliable tin and lead solder
+            products for soldering applications.
+          </p>
+
+        </a>
+
+
+        <a
+          href="#shop"
+          class="category"
+        >
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            Accessories
+          </h3>
+
+          <p>
+            Flux and other essential
+            soldering and electrical supplies.
+          </p>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ABOUT -->
+
+  <section
+    id="about"
+    class="about"
+  >
+
+    <div class="container about-grid">
+
+
+      <div class="about-image">
+
+        <strong>
+          IS
+        </strong>
+
+      </div>
+
+
+      <div class="about-text">
+
+
+        <div class="section-title">
+
+          <small>
+            03 / ABOUT INVENCO
+          </small>
+
+          <h2>
+
+            QUALITY
+
+            <br />
+
+            <span>
+              MATTERS.
+            </span>
+
+          </h2>
+
+        </div>
+
+
+        <p>
+
+          Invenco Solder supplies soldering
+          and electrical products designed
+          for reliable everyday use.
+
+        </p>
+
+
+        <p>
+
+          From professional workshops to
+          electronics benches and repair stations,
+          we're focused on providing dependable
+          products and straightforward service.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <small>
+          04 / CONTACT
+        </small>
+
+        <h2>
+
+          NEED
+
+          <br />
+
+          <span>
+            HELP?
+          </span>
+
+        </h2>
+
+      </div>
+
+
+      <p
+        style="
+          color:#888;
+          max-width:500px;
+          line-height:1.8;
+        "
+      >
+
+        Have a question about a product
+        or an order? Get in touch with
+        the Invenco Solder team.
+
+      </p>
+
+
+      <a
+        href="mailto:info@invencosolder.co.uk"
+        class="button primary"
+        style="
+          display:inline-block;
+          margin-top:20px;
+        "
+      >
+
+        Email Us →
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <div class="logo">
+
+          <span class="logo-box">
+            IS
+          </span>
+
+          <span>
+            INVENCO
+            <small>SOLDER</small>
+          </span>
+
+        </div>
+
+
+        <p>
+          Professional soldering and
+          electrical supplies.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          SHOP
+        </h3>
+
+        <a href="#shop">
+          Products
+        </a>
+
+        <br />
+
+        <a href="#categories">
+          Categories
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          COMPANY
+        </h3>
+
+        <a href="#about">
+          About
+        </a>
+
+        <br />
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+      © {new Date().getFullYear()}
+      Invenco Solder.
+      All rights reserved.
+
+    </div>
+
+
+  </div>
+
+</footer>
+
+
+</body>
+
 </html>
