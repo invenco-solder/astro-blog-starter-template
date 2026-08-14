@@ -1,0 +1,703 @@
+---
+const lengths = [
+  { label: "1 Meter", price: 1.89 },
+  { label: "2 Meters", price: 2.29 },
+  { label: "3 Meters", price: 2.99 },
+  { label: "4 Meters", price: 3.49 },
+  { label: "5 Meters", price: 4.49 },
+  { label: "7 Meters", price: 5.99 },
+  { label: "10 Meters", price: 8.99 },
+];
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>99C Tin/Copper Solder Wire | Invenco Solder</title>
+
+  <meta
+    name="description"
+    content="Lead Free 99C Tin/Copper solder wire with 399 Flux 5 Core. 0.7mm diameter."
+  />
+
+  <style>
+    :global(*) {
+      box-sizing: border-box;
+    }
+
+    :global(body) {
+      margin: 0;
+      background: #101214;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    :global(a) {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      background: #0b0d0f;
+      border-bottom: 1px solid #292d30;
+    }
+
+    nav {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .logo-box {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: #ff6a21;
+      color: #111;
+      font-weight: 900;
+    }
+
+    .logo small {
+      display: block;
+      color: #ff6a21;
+      font-size: 8px;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover {
+      color: #ff6a21;
+    }
+
+    .breadcrumbs {
+      padding: 25px 0;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .breadcrumbs span {
+      color: #ff6a21;
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      padding: 35px 0 90px;
+    }
+
+    /* IMAGE GALLERY */
+
+    .gallery-main {
+      height: 570px;
+      background: #171a1c;
+      border: 1px solid #303437;
+      overflow: hidden;
+    }
+
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .thumbnail {
+      width: 95px;
+      height: 95px;
+      padding: 0;
+      border: 2px solid #333;
+      background: #171a1c;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .thumbnail.active {
+      border-color: #ff6a21;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* PRODUCT INFORMATION */
+
+    .category {
+      color: #ff6a21;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      margin: 15px 0;
+      font-size: clamp(42px, 5vw, 65px);
+      line-height: .9;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+    }
+
+    .price {
+      color: #ff6a21;
+      font-size: 30px;
+      font-weight: 800;
+      margin: 22px 0;
+    }
+
+    .intro {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .specs {
+      margin: 25px 0;
+      border-top: 1px solid #292d30;
+    }
+
+    .spec {
+      padding: 11px 0;
+      border-bottom: 1px solid #292d30;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .spec::before {
+      content: "•";
+      color: #ff6a21;
+      margin-right: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 25px 0 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    select,
+    input {
+      width: 100%;
+      height: 52px;
+      background: #171a1c;
+      color: white;
+      border: 1px solid #444;
+      padding: 0 15px;
+      font-size: 14px;
+    }
+
+    select:focus,
+    input:focus {
+      outline: none;
+      border-color: #ff6a21;
+    }
+
+    .quantity-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .cart-button {
+      height: 52px;
+      border: none;
+      background: #ff6a21;
+      color: #111;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .cart-button:hover {
+      background: #ff8243;
+    }
+
+    .stock {
+      margin-top: 15px;
+      color: #69d269;
+      font-size: 13px;
+    }
+
+    .shipping {
+      margin-top: 30px;
+      padding: 20px;
+      background: #171a1c;
+      border: 1px solid #292d30;
+      border-left: 3px solid #ff6a21;
+    }
+
+    .shipping strong {
+      display: block;
+      color: #ff6a21;
+      margin-bottom: 8px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .shipping p {
+      margin: 0;
+      color: #888;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* DESCRIPTION */
+
+    .details {
+      padding: 70px 0 100px;
+      border-top: 1px solid #292d30;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+    }
+
+    .details h2 {
+      font-size: 38px;
+      text-transform: uppercase;
+    }
+
+    .details p,
+    .details li {
+      color: #888;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .details li::marker {
+      color: #ff6a21;
+    }
+
+    .info-box {
+      padding: 25px;
+      background: #171a1c;
+      border: 1px solid #292d30;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      color: #ff6a21;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    footer {
+      padding: 50px 0;
+      background: #08090a;
+      border-top: 1px solid #292d30;
+      color: #666;
+      font-size: 11px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .product-layout,
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-main {
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .gallery-main {
+        height: 350px;
+      }
+
+      .quantity-row {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+
+      <a href="/" class="logo">
+        <span class="logo-box">IS</span>
+
+        <span>
+          INVENCO
+          <small>SOLDER</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/#shop">Shop</a>
+        <a href="/#categories">Categories</a>
+        <a href="/#contact">Contact</a>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+  <div class="container">
+
+    <div class="breadcrumbs">
+      <a href="/">Home</a>
+      &nbsp; / &nbsp;
+      <a href="/#shop">Solder Wire</a>
+      &nbsp; / &nbsp;
+      <span>99C Tin/Copper</span>
+    </div>
+
+
+    <div class="product-layout">
+
+      <!-- PRODUCT IMAGES -->
+
+      <div>
+
+        <div class="gallery-main">
+
+          <img
+            id="mainImage"
+            src="/products/99C.jpg"
+            alt="99C Tin Copper Solder Wire"
+          />
+
+        </div>
+
+        <div class="thumbnails">
+
+          <button
+            class="thumbnail active"
+            onclick="changeImage('/products/99C.jpg', this)"
+          >
+            <img
+              src="/products/99C.jpg"
+              alt="99C solder"
+            />
+          </button>
+
+          <button
+            class="thumbnail"
+            onclick="changeImage('/products/99C 5.jpg', this)"
+          >
+            <img
+              src="/products/99C 5.jpg"
+              alt="99C solder coil"
+            />
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT DETAILS -->
+
+      <div>
+
+        <div class="category">
+          SOLDER WIRE
+        </div>
+
+        <h1>
+          99C Tin/Copper
+          Solder Wire
+        </h1>
+
+        <div class="price" id="price">
+          £1.89
+        </div>
+
+        <p class="intro">
+          Lead Free 99C Tin/Copper solder wire with 399 Flux
+          5 Core. Suitable for electrical and electronic
+          soldering applications.
+        </p>
+
+
+        <div class="specs">
+
+          <div class="spec">Lead Free</div>
+
+          <div class="spec">99C Tin/Copper</div>
+
+          <div class="spec">399 Flux 5 Core</div>
+
+          <div class="spec">EN 29463 S-Sn89Cu1</div>
+
+          <div class="spec">EN 29464 1.1.2.</div>
+
+          <div class="spec">Diameter: 0.7mm</div>
+
+          <div class="spec">Batch: 1476/811</div>
+
+          <div class="spec">Original spool weight: 500G</div>
+
+        </div>
+
+
+        <label for="length">
+          Select Length
+        </label>
+
+        <select id="length">
+
+          {lengths.map((item) => (
+            <option value={item.price}>
+              {item.label} — £{item.price.toFixed(2)}
+            </option>
+          ))}
+
+        </select>
+
+
+        <div class="quantity-row">
+
+          <input
+            id="quantity"
+            type="number"
+            value="1"
+            min="1"
+          />
+
+          <button
+            class="cart-button"
+            id="cartButton"
+          >
+            ADD TO CART
+          </button>
+
+        </div>
+
+
+        <div class="stock">
+          ✓ In stock
+        </div>
+
+
+        <div class="shipping">
+
+          <strong>
+            CUT TO YOUR REQUIRED LENGTH
+          </strong>
+
+          <p>
+            The solder wire is cut to the length selected above
+            and supplied in coil form.
+          </p>
+
+          <p style="margin-top:10px;">
+            For example, selecting 2 meters means 2 meters of
+            solder wire will be cut from the spool and shipped
+            as a coil.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FULL DESCRIPTION -->
+
+    <section class="details">
+
+      <div class="details-grid">
+
+        <div>
+
+          <div class="category">
+            PRODUCT INFORMATION
+          </div>
+
+          <h2>
+            Description
+          </h2>
+
+          <p>
+            Lead Free 99C Tin/Copper solder wire featuring
+            399 Flux 5 Core construction.
+          </p>
+
+          <p>
+            The original product is supplied on a 500G spool.
+            We offer this solder wire in convenient lengths
+            ranging from 1 meter to 10 meters.
+          </p>
+
+          <p>
+            Each order is cut to the length selected by the
+            customer. The cut length is then supplied in coil
+            form for easy handling, storage and use.
+          </p>
+
+          <ul>
+            <li>Lead Free</li>
+            <li>99C Tin/Copper</li>
+            <li>399 Flux 5 Core</li>
+            <li>EN 29463 S-Sn89Cu1</li>
+            <li>EN 29464 1.1.2.</li>
+            <li>Diameter: 0.7mm</li>
+            <li>Batch: 1476/811</li>
+            <li>Original spool weight: 500G</li>
+          </ul>
+
+        </div>
+
+
+        <div class="info-box">
+
+          <h3>
+            COIL SHIPPING
+          </h3>
+
+          <p>
+            All lengths are cut to order.
+          </p>
+
+          <p>
+            Your selected length is carefully measured,
+            cut from the spool and supplied as a coil.
+          </p>
+
+          <p>
+            Example: select 5 meters and you will receive
+            5 meters of solder wire supplied in coil form.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+    © {new Date().getFullYear()} Invenco Solder. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script>
+
+  const lengthSelect =
+    document.getElementById("length");
+
+  const price =
+    document.getElementById("price");
+
+  const cartButton =
+    document.getElementById("cartButton");
+
+
+  lengthSelect?.addEventListener("change", () => {
+
+    const selectedPrice =
+      Number(lengthSelect.value);
+
+    price.textContent =
+      `£${selectedPrice.toFixed(2)}`;
+
+  });
+
+
+  cartButton?.addEventListener("click", () => {
+
+    const selected =
+      lengthSelect.options[
+        lengthSelect.selectedIndex
+      ];
+
+    const quantity =
+      document.getElementById("quantity").value;
+
+    alert(
+      `${selected.text} × ${quantity}\n\n` +
+      "Cart functionality will be connected next."
+    );
+
+  });
+
+
+  function changeImage(src, button) {
+
+    const image =
+      document.getElementById("mainImage");
+
+    image.src = src;
+
+    document
+      .querySelectorAll(".thumbnail")
+      .forEach((item) => {
+        item.classList.remove("active");
+      });
+
+    button.classList.add("active");
+
+  }
+
+</script>
+
+</body>
+</html>
