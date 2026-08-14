@@ -1,50 +1,1548 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+const products = [
+  {
+    name: "Premium Solder Wire",
+    description: "High-quality solder wire for electrical and electronic applications.",
+    price: "£9.99",
+    category: "Solder Wire",
+    image: "/products/solder-wire.jpg",
+  },
+  {
+    name: "Lead Solder Wire",
+    description: "Reliable tin/lead solder for professional soldering applications.",
+    price: "£12.99",
+    category: "Tin / Lead Solder",
+    image: "/products/lead-solder.jpg",
+  },
+  {
+    name: "Soldering Flux",
+    description: "Professional-grade flux designed for clean, reliable joints.",
+    price: "£6.99",
+    category: "Flux",
+    image: "/products/flux.jpg",
+  },
+  {
+    name: "Electronics Solder Kit",
+    description: "A practical selection of soldering essentials for your workspace.",
+    price: "£19.99",
+    category: "Kits",
+    image: "/products/solder-kit.jpg",
+  },
+];
+
+const categories = [
+  {
+    title: "Solder Wire",
+    description: "Professional solder wire for electrical and electronic work.",
+    icon: "01",
+  },
+  {
+    title: "Tin / Lead Solder",
+    description: "Reliable solder materials for demanding applications.",
+    icon: "02",
+  },
+  {
+    title: "Flux & Accessories",
+    description: "Everything you need for clean, reliable solder joints.",
+    icon: "03",
+  },
+];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Invenco Solder | Professional Solder & Electrical Supplies</title>
+
+    <meta
+      name="description"
+      content="Professional solder, tin/lead solder and electrical soldering supplies."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+      <div class="container nav">
+
+        <a href="/" class="logo">
+          <span class="logo-mark">IS</span>
+          <span>
+            <strong>INVenco</strong>
+            <small>SOLDER</small>
+          </span>
+        </a>
+
+        <nav class="desktop-nav">
+          <a href="/">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#categories">Categories</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="search-button" aria-label="Search">
+            <span>⌕</span>
+          </button>
+
+          <button class="cart-button">
+            Cart <span class="cart-count">0</span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+      <section class="hero">
+
+        <div class="hero-grid"></div>
+
+        <div class="container hero-content">
+
+          <div class="hero-copy">
+
+            <div class="eyebrow">
+              <span></span>
+              PROFESSIONAL ELECTRICAL SUPPLIES
+            </div>
+
+            <h1>
+              SOLDERING
+              <br />
+              <strong>BUILT FOR THE JOB.</strong>
+            </h1>
+
+            <p>
+              Reliable solder and electrical supplies for professionals,
+              workshops, engineers, makers and repair specialists.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#shop" class="button button-primary">
+                Shop Products
+                <span>→</span>
+              </a>
+
+              <a href="#categories" class="button button-outline">
+                Explore Categories
+              </a>
+            </div>
+
+            <div class="hero-details">
+              <div>
+                <strong>01</strong>
+                <span>Professional<br />Quality</span>
+              </div>
+
+              <div>
+                <strong>02</strong>
+                <span>Fast UK<br />Dispatch</span>
+              </div>
+
+              <div>
+                <strong>03</strong>
+                <span>Reliable<br />Products</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="hero-product">
+
+            <div class="product-glow"></div>
+
+            <div class="hero-placeholder">
+              <div class="placeholder-label">
+                PRODUCT IMAGE
+              </div>
+
+              <div class="wire-ring"></div>
+
+              <div class="hero-solder">
+                <span>INVenco</span>
+                <small>SOLDER</small>
+              </div>
+            </div>
+
+            <div class="floating-card">
+              <span>PRECISION</span>
+              <strong>SOLDERING SUPPLIES</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           TRUST BAR
+      ========================== -->
+
+      <section class="trust-bar">
+        <div class="container trust-grid">
+
+          <div>
+            <span class="trust-icon">✓</span>
+            <div>
+              <strong>Professional Quality</strong>
+              <small>Products selected for reliable results</small>
+            </div>
+          </div>
+
+          <div>
+            <span class="trust-icon">UK</span>
+            <div>
+              <strong>UK Based</strong>
+              <small>Fast domestic dispatch</small>
+            </div>
+          </div>
+
+          <div>
+            <span class="trust-icon">↗</span>
+            <div>
+              <strong>Built For Work</strong>
+              <small>For workshops, engineers & makers</small>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- =========================
+           CATEGORIES
+      ========================== -->
+
+      <section id="categories" class="section categories-section">
+
+        <div class="container">
+
+          <div class="section-heading">
+
+            <div>
+              <span class="section-number">01 / CATEGORIES</span>
+
+              <h2>
+                EVERYTHING FOR
+                <br />
+                <span>THE WORKBENCH.</span>
+              </h2>
+            </div>
+
+            <p>
+              Shop dependable soldering materials and electrical supplies
+              selected for professional and everyday use.
+            </p>
+
+          </div>
+
+
+          <div class="category-grid">
+
+            {categories.map((category) => (
+
+              <a href="#shop" class="category-card">
+
+                <div class="category-number">
+                  {category.icon}
+                </div>
+
+                <div class="category-arrow">
+                  →
+                </div>
+
+                <div class="category-content">
+
+                  <h3>{category.title}</h3>
+
+                  <p>{category.description}</p>
+
+                  <span>SHOP CATEGORY →</span>
+
+                </div>
+
+              </a>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           SHOP
+      ========================== -->
+
+      <section id="shop" class="section shop-section">
+
+        <div class="container">
+
+          <div class="section-heading shop-heading">
+
+            <div>
+              <span class="section-number">02 / SHOP</span>
+
+              <h2>
+                FEATURED
+                <br />
+                <span>PRODUCTS.</span>
+              </h2>
+            </div>
+
+            <a href="#" class="view-all">
+              VIEW ALL PRODUCTS →
+            </a>
+
+          </div>
+
+
+          <div class="product-grid">
+
+            {products.map((product) => (
+
+              <article class="product-card">
+
+                <a href="#" class="product-image">
+
+                  <div class="image-placeholder">
+
+                    <span>PRODUCT IMAGE</span>
+
+                    <div class="mini-wire"></div>
+
+                  </div>
+
+                  <div class="product-tag">
+                    {product.category}
+                  </div>
+
+                </a>
+
+                <div class="product-info">
+
+                  <div>
+
+                    <h3>{product.name}</h3>
+
+                    <p>{product.description}</p>
+
+                  </div>
+
+                  <div class="product-bottom">
+
+                    <strong>{product.price}</strong>
+
+                    <button class="add-button">
+                      +
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           ABOUT
+      ========================== -->
+
+      <section id="about" class="about-section">
+
+        <div class="container about-grid">
+
+          <div class="about-image">
+
+            <div class="industrial-lines"></div>
+
+            <div class="about-badge">
+              <strong>IS</strong>
+              <span>INVenco<br />SOLDER</span>
+            </div>
+
+          </div>
+
+          <div class="about-content">
+
+            <span class="section-number">03 / ABOUT INVENCO</span>
+
+            <h2>
+              PRODUCTS THAT
+              <br />
+              <span>GET THE JOB DONE.</span>
+            </h2>
+
+            <p>
+              Invenco Solder is focused on supplying dependable soldering
+              and electrical products for people who actually use them.
+            </p>
+
+            <p>
+              From professional workshops to electronics benches and
+              repair stations, our goal is simple: quality products,
+              straightforward service and reliable delivery.
+            </p>
+
+            <a href="#contact" class="button button-primary">
+              Get In Touch →
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           CTA
+      ========================== -->
+
+      <section class="cta-section">
+
+        <div class="container cta-content">
+
+          <span class="section-number">READY TO GET STARTED?</span>
+
+          <h2>
+            BUILD IT.
+            <br />
+            <span>SOLDER IT.</span>
+            <br />
+            GET IT DONE.
+          </h2>
+
+          <a href="#shop" class="button button-primary">
+            Shop Soldering Supplies →
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           CONTACT
+      ========================== -->
+
+      <section id="contact" class="contact-section">
+
+        <div class="container contact-grid">
+
+          <div>
+
+            <span class="section-number">04 / CONTACT</span>
+
+            <h2>
+              NEED
+              <br />
+              <span>HELP?</span>
+            </h2>
+
+            <p>
+              Have a question about a product, an order or something
+              you're looking for?
+            </p>
+
+          </div>
+
+          <div class="contact-box">
+
+            <a href="mailto:info@invencosolder.co.uk">
+              <span>EMAIL</span>
+              info@invencosolder.co.uk
+            </a>
+
+            <a href="#shop">
+              <span>SHOP</span>
+              Browse Products →
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+      <div class="container footer-top">
+
+        <div class="footer-brand">
+
+          <a href="/" class="logo">
+            <span class="logo-mark">IS</span>
+            <span>
+              <strong>INVenco</strong>
+              <small>SOLDER</small>
+            </span>
+          </a>
+
+          <p>
+            Professional soldering and electrical supplies.
+          </p>
+
+        </div>
+
+        <div class="footer-links">
+
+          <div>
+            <strong>SHOP</strong>
+            <a href="#shop">All Products</a>
+            <a href="#categories">Categories</a>
+          </div>
+
+          <div>
+            <strong>COMPANY</strong>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <div>
+            <strong>INFORMATION</strong>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Privacy</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container footer-bottom">
+
+        <span>
+          © {new Date().getFullYear()} Invenco Solder. All rights reserved.
+        </span>
+
+        <span>
+          invencosolder.co.uk
+        </span>
+
+      </div>
+
+    </footer>
+
+
+    <!-- =========================
+         STYLES
+    ========================== -->
+
+    <style>
+
+      :global(*) {
+        box-sizing: border-box;
+      }
+
+      :global(html) {
+        scroll-behavior: smooth;
+      }
+
+      :global(body) {
+        margin: 0;
+        background: #101214;
+        color: #f2f2ef;
+        font-family: "Inter", sans-serif;
+      }
+
+      :global(a) {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      :global(button) {
+        font-family: inherit;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+
+      /* HEADER */
+
+      .header {
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+      }
+
+      .nav {
+        height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+
+      .logo-mark {
+        width: 39px;
+        height: 39px;
+        display: grid;
+        place-items: center;
+        background: #ff6b22;
+        color: #101214;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        font-size: 17px;
+        transform: skew(-8deg);
+      }
+
+      .logo strong {
+        display: block;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 23px;
+        line-height: .85;
+        letter-spacing: .5px;
+      }
+
+      .logo small {
+        display: block;
+        margin-top: 4px;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: #ff6b22;
+      }
+
+      .desktop-nav {
+        display: flex;
+        gap: 34px;
+        margin-left: 80px;
+      }
+
+      .desktop-nav a {
+        color: #aaa;
+        font-size: 13px;
+        font-weight: 600;
+        transition: .2s;
+      }
+
+      .desktop-nav a:hover {
+        color: #fff;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .search-button,
+      .cart-button {
+        background: transparent;
+        color: white;
+        border: 1px solid #34383b;
+        height: 39px;
+        padding: 0 15px;
+        cursor: pointer;
+      }
+
+      .search-button {
+        width: 42px;
+        padding: 0;
+        font-size: 24px;
+      }
+
+      .cart-count {
+        margin-left: 7px;
+        color: #ff6b22;
+      }
+
+
+      /* HERO */
+
+      .hero {
+        min-height: 760px;
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 72% 50%, rgba(255,107,34,.14), transparent 28%),
+          #101214;
+      }
+
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        opacity: .12;
+        background-image:
+          linear-gradient(#777 1px, transparent 1px),
+          linear-gradient(90deg, #777 1px, transparent 1px);
+        background-size: 70px 70px;
+        mask-image: linear-gradient(to right, transparent, black 45%, black);
+      }
+
+      .hero-content {
+        min-height: 760px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 50px;
+        padding-top: 80px;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 2;
+      }
+
+      .eyebrow,
+      .section-number {
+        color: #ff6b22;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .eyebrow span {
+        width: 27px;
+        height: 2px;
+        background: #ff6b22;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 23px 0;
+        font-size: clamp(62px, 7vw, 105px);
+        line-height: .82;
+        letter-spacing: -2px;
+      }
+
+      h1 strong {
+        color: #ff6b22;
+      }
+
+      .hero-copy > p {
+        max-width: 520px;
+        color: #9ea2a4;
+        line-height: 1.8;
+        font-size: 15px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        min-height: 50px;
+        padding: 0 22px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+      }
+
+      .button-primary {
+        background: #ff6b22;
+        color: #101214;
+      }
+
+      .button-primary:hover {
+        background: #ff8243;
+      }
+
+      .button-outline {
+        border: 1px solid #3b3f42;
+        color: #ddd;
+      }
+
+      .hero-details {
+        display: flex;
+        gap: 40px;
+        margin-top: 65px;
+      }
+
+      .hero-details div {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+
+      .hero-details strong {
+        color: #ff6b22;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 25px;
+      }
+
+      .hero-details span {
+        color: #898d90;
+        font-size: 9px;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+
+      /* HERO PRODUCT */
+
+      .hero-product {
+        height: 550px;
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
+
+      .product-glow {
+        width: 470px;
+        height: 470px;
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255,107,34,.08);
+        box-shadow: 0 0 100px rgba(255,107,34,.08);
+      }
+
+      .hero-placeholder {
+        width: 430px;
+        height: 430px;
+        border: 1px solid #33383b;
+        position: relative;
+        display: grid;
+        place-items: center;
+        transform: rotate(-5deg);
+        background: linear-gradient(145deg, #191d20, #0b0d0f);
+      }
+
+      .placeholder-label {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: #5c6063;
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      .wire-ring {
+        position: absolute;
+        width: 270px;
+        height: 270px;
+        border: 35px solid #b8b9b6;
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 10px #3b3d3d,
+          inset 0 0 30px rgba(0,0,0,.5);
+      }
+
+      .hero-solder {
+        position: relative;
+        z-index: 2;
+        width: 180px;
+        height: 75px;
+        display: grid;
+        place-items: center;
+        background: #171a1c;
+        border: 1px solid #42474a;
+        box-shadow: 20px 20px 60px rgba(0,0,0,.6);
+        transform: rotate(-8deg);
+      }
+
+      .hero-solder span {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .hero-solder small {
+        color: #ff6b22;
+        font-size: 7px;
+        letter-spacing: 3px;
+      }
+
+      .floating-card {
+        position: absolute;
+        right: -5px;
+        bottom: 50px;
+        padding: 18px 24px;
+        background: #171a1c;
+        border-left: 3px solid #ff6b22;
+        box-shadow: 0 15px 50px rgba(0,0,0,.4);
+      }
+
+      .floating-card span,
+      .floating-card strong {
+        display: block;
+      }
+
+      .floating-card span {
+        color: #ff6b22;
+        font-size: 8px;
+        letter-spacing: 2px;
+      }
+
+      .floating-card strong {
+        margin-top: 5px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 17px;
+      }
+
+
+      /* TRUST */
+
+      .trust-bar {
+        border-top: 1px solid #292d30;
+        border-bottom: 1px solid #292d30;
+        background: #151719;
+      }
+
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .trust-grid > div {
+        min-height: 105px;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        padding: 20px 35px;
+        border-right: 1px solid #292d30;
+      }
+
+      .trust-grid > div:first-child {
+        border-left: 1px solid #292d30;
+      }
+
+      .trust-icon {
+        width: 35px;
+        height: 35px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #4a4e50;
+        color: #ff6b22;
+        font-size: 10px;
+        font-weight: 800;
+      }
+
+      .trust-grid strong,
+      .trust-grid small {
+        display: block;
+      }
+
+      .trust-grid strong {
+        font-size: 11px;
+      }
+
+      .trust-grid small {
+        margin-top: 5px;
+        color: #777c7f;
+        font-size: 9px;
+      }
+
+
+      /* SECTIONS */
+
+      .section {
+        padding: 120px 0;
+      }
+
+      .section-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 55px;
+      }
+
+      .section-heading h2,
+      .about-content h2,
+      .contact-section h2,
+      .cta-section h2 {
+        margin: 14px 0 0;
+        font-size: clamp(48px, 6vw, 78px);
+        line-height: .85;
+      }
+
+      h2 span {
+        color: #ff6b22;
+      }
+
+      .section-heading > p {
+        max-width: 350px;
+        margin: 0;
+        color: #777c7f;
+        line-height: 1.7;
+        font-size: 13px;
+      }
+
+
+      /* CATEGORIES */
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .category-card {
+        min-height: 310px;
+        padding: 25px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #292d30;
+        background: #151719;
+        transition: .3s;
+      }
+
+      .category-card:hover {
+        border-color: #ff6b22;
+        transform: translateY(-5px);
+      }
+
+      .category-number {
+        color: #454a4c;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 40px;
+      }
+
+      .category-arrow {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        color: #ff6b22;
+        font-size: 22px;
+      }
+
+      .category-content {
+        position: absolute;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+      }
+
+      .category-content h3 {
+        margin: 0;
+        font-size: 31px;
+      }
+
+      .category-content p {
+        max-width: 270px;
+        color: #777c7f;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .category-content span {
+        color: #ff6b22;
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+      }
+
+
+      /* SHOP */
+
+      .shop-section {
+        background: #0c0e10;
+        border-top: 1px solid #24282a;
+        border-bottom: 1px solid #24282a;
+      }
+
+      .view-all {
+        color: #ff6b22;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+
+      .product-card {
+        background: #151719;
+        border: 1px solid #292d30;
+      }
+
+      .product-image {
+        display: block;
+        height: 285px;
+        position: relative;
+        overflow: hidden;
+        background: #1b1e20;
+      }
+
+      .image-placeholder {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        position: relative;
+        color: #555b5e;
+        font-size: 8px;
+        letter-spacing: 2px;
+        background:
+          linear-gradient(135deg, transparent 49%, rgba(255,255,255,.03) 50%, transparent 51%);
+        background-size: 20px 20px;
+      }
+
+      .mini-wire {
+        width: 130px;
+        height: 130px;
+        border: 20px solid #8c8e8c;
+        border-radius: 50%;
+        opacity: .45;
+      }
+
+      .product-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        padding: 6px 9px;
+        background: #ff6b22;
+        color: #101214;
+        font-size: 7px;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+
+      .product-info {
+        padding: 20px;
+      }
+
+      .product-info h3 {
+        margin: 0;
+        font-size: 22px;
+      }
+
+      .product-info p {
+        min-height: 42px;
+        margin: 8px 0 20px;
+        color: #72777a;
+        font-size: 10px;
+        line-height: 1.6;
+      }
+
+      .product-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #292d30;
+        padding-top: 15px;
+      }
+
+      .product-bottom strong {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 23px;
+      }
+
+      .add-button {
+        width: 33px;
+        height: 33px;
+        border: 0;
+        background: #ff6b22;
+        color: #101214;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+
+      /* ABOUT */
+
+      .about-section {
+        padding: 120px 0;
+        background: #151719;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 90px;
+        align-items: center;
+      }
+
+      .about-image {
+        min-height: 520px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #34383b;
+        background:
+          linear-gradient(135deg, rgba(255,107,34,.12), transparent),
+          repeating-linear-gradient(
+            45deg,
+            #1b1e20,
+            #1b1e20 10px,
+            #181b1d 10px,
+            #181b1d 20px
+          );
+      }
+
+      .industrial-lines {
+        position: absolute;
+        inset: 15%;
+        border: 1px solid #3b3f42;
+        transform: rotate(15deg);
+      }
+
+      .industrial-lines::after {
+        content: "";
+        position: absolute;
+        inset: 20%;
+        border: 1px solid #ff6b22;
+      }
+
+      .about-badge {
+        position: absolute;
+        bottom: 35px;
+        left: 35px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        background: #101214;
+        border-left: 3px solid #ff6b22;
+      }
+
+      .about-badge strong {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 40px;
+        color: #ff6b22;
+      }
+
+      .about-badge span {
+        font-size: 9px;
+        line-height: 1.5;
+        letter-spacing: 2px;
+      }
+
+      .about-content p {
+        color: #858a8d;
+        line-height: 1.8;
+        font-size: 13px;
+        max-width: 480px;
+      }
+
+      .about-content .button {
+        margin-top: 20px;
+      }
+
+
+      /* CTA */
+
+      .cta-section {
+        padding: 130px 0;
+        text-align: center;
+        background:
+          radial-gradient(circle at center, rgba(255,107,34,.11), transparent 45%),
+          #101214;
+        border-bottom: 1px solid #292d30;
+      }
+
+      .cta-section h2 {
+        font-size: clamp(58px, 8vw, 105px);
+        margin-bottom: 40px;
+      }
+
+
+      /* CONTACT */
+
+      .contact-section {
+        padding: 110px 0;
+        background: #0c0e10;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        align-items: center;
+      }
+
+      .contact-section p {
+        max-width: 430px;
+        color: #777c7f;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .contact-box {
+        border-top: 1px solid #34383b;
+      }
+
+      .contact-box a {
+        display: block;
+        padding: 25px 0;
+        border-bottom: 1px solid #34383b;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 25px;
+      }
+
+      .contact-box span {
+        display: block;
+        margin-bottom: 5px;
+        color: #ff6b22;
+        font-family: "Inter", sans-serif;
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+
+
+      /* FOOTER */
+
+      .footer {
+        background: #090a0b;
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        padding: 65px 0;
+      }
+
+      .footer-brand p {
+        color: #62676a;
+        font-size: 10px;
+        margin-top: 20px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 70px;
+      }
+
+      .footer-links div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-links strong {
+        color: #ff6b22;
+        font-size: 8px;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+      }
+
+      .footer-links a {
+        color: #707578;
+        font-size: 10px;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-top: 1px solid #24282a;
+        color: #505558;
+        font-size: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+
+      /* MOBILE */
+
+      @media (max-width: 900px) {
+
+        .desktop-nav {
+          display: none;
+        }
+
+        .hero-content {
+          grid-template-columns: 1fr;
+          padding-top: 140px;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .hero-content {
+          min-height: auto;
+          padding-bottom: 90px;
+        }
+
+        .hero-product {
+          height: 400px;
+        }
+
+        .hero-placeholder {
+          width: 320px;
+          height: 320px;
+        }
+
+        .wire-ring {
+          width: 200px;
+          height: 200px;
+          border-width: 27px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+
+        .category-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .trust-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .trust-grid > div {
+          border-left: 1px solid #292d30;
+          border-bottom: 1px solid #292d30;
+        }
+
+      }
+
+
+      @media (max-width: 600px) {
+
+        .container {
+          width: min(100% - 28px, 1180px);
+        }
+
+        .nav {
+          height: 70px;
+        }
+
+        .nav-actions .search-button {
+          display: none;
+        }
+
+        .hero-content {
+          padding-top: 120px;
+        }
+
+        h1 {
+          font-size: 59px;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .hero-details {
+          gap: 18px;
+        }
+
+        .hero-details div {
+          gap: 6px;
+        }
+
+        .hero-details span {
+          font-size: 7px;
+        }
+
+        .section {
+          padding: 80px 0;
+        }
+
+        .section-heading {
+          display: block;
+        }
+
+        .section-heading > p {
+          margin-top: 25px;
+        }
+
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .product-image {
+          height: 330px;
+        }
+
+        .about-image {
+          min-height: 380px;
+        }
+
+        .footer-top {
+          flex-direction: column;
+        }
+
+        .footer-links {
+          gap: 35px;
+          flex-wrap: wrap;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+      }
+
+    </style>
+
+  </body>
 </html>
