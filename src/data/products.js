@@ -69,7 +69,7 @@ export const products = [
     description:
       "Invenco Engineering Industries Solder Division Lead Free Grade 99C Premium Plumbing Solder Wire. Complete 250g roll with a 3.00mm diameter. Supplied on a green spool and suitable for plumbing soldering applications.",
     price: 13.99,
-    image: "/products/s-I1600 (2).webp",
+   image: "/products/s-l1600 (2).webp",
     category: "Plumbing Solder Wire",
 
     specs: {
