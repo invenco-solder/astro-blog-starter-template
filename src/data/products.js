@@ -84,4 +84,37 @@ export const products = [
       "Type": "Lead Free Solder Wire"
     }
   }
+    {
+    name: "60% Tin 0.9mm Rosin Flux Core Solder Wire",
+    slug: "60-tin-09mm-rosin-flux-solder-wire",
+    description:
+      "High-quality solder wire designed for hobbyists, electronics work, repairs and general soldering applications. Features a rosin-fluxed core for easy soldering and does not require cleaning after soldering. The flux residue is non-corrosive, making it suitable for a wide range of electronic applications. Your chosen length is cut to size and supplied in coil form, NOT on a roll or spool.",
+
+    price: 3.25,
+
+    image: "/products/s-l1600.webp",
+
+    category: "Electronics Solder Wire",
+
+    specs: {
+      "Composition": "60% Tin",
+      "Flux": "2.2% Rosin Flux",
+      "Diameter": "0.9mm",
+      "Core": "Rosin Fluxed",
+      "Residue": "Non-Corrosive",
+      "Cleaning": "No Cleaning Required",
+      "Application": "Hobbyists & Electronics",
+      "Supply Format": "Cut-to-Length Coil",
+      "Roll / Spool": "NOT Supplied on a Roll or Spool"
+    },
+
+    lengths: [
+      { name: "1 Metre", price: 3.25 },
+      { name: "2 Metres", price: 3.78 },
+      { name: "3 Metres", price: 4.31 },
+      { name: "5 Metres", price: 5.36 },
+      { name: "7 Metres", price: 6.95 },
+      { name: "10 Metres", price: 8.54 }
+    ]
+  },
 ];
