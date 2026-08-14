@@ -62,4 +62,25 @@ export const products = [
       { name: "10m", price: 8.99 }
     ]
   }
+  {
+  name: "YOUR PRODUCT NAME",
+  slug: "your-product-name",
+  description:
+    "Your product description goes here.",
+  price: 0.00,
+  image: "/products/product3.jpg",
+  category: "Solder Wire",
+
+  specs: {
+    "Diameter": "0.7mm",
+    "Material": "Tin/Copper",
+    "Flux": "5 Core"
+  },
+
+  lengths: [
+    { name: "1m", price: 1.89 },
+    { name: "2m", price: 2.29 },
+    { name: "3m", price: 2.99 }
+  ]
+},
 ];
