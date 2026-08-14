@@ -1,0 +1,649 @@
+---
+import { products } from "../../data/products";
+
+export function getStaticPaths() {
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>{product.name} | Invenco Solder</title>
+
+  <meta
+    name="description"
+    content={product.description}
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #101214;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1150px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      background: #101214;
+      border-bottom: 1px solid #292d30;
+    }
+
+    nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .logo-box {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: #ff6a21;
+      color: #111;
+      font-weight: 900;
+    }
+
+    .logo small {
+      display: block;
+      color: #ff6a21;
+      font-size: 8px;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover {
+      color: #ff6a21;
+    }
+
+    .page {
+      padding: 70px 0 110px;
+    }
+
+    .breadcrumbs {
+      color: #777;
+      font-size: 12px;
+      margin-bottom: 35px;
+    }
+
+    .breadcrumbs span {
+      color: #ff6a21;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .gallery {
+      position: sticky;
+      top: 25px;
+    }
+
+    .main-image {
+      height: 560px;
+      background: #181b1d;
+      border: 1px solid #303438;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .eyebrow {
+      color: #ff6a21;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 15px 0;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: .92;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+    }
+
+    .description {
+      color: #888;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .price {
+      color: #ff6a21;
+      font-size: 32px;
+      font-weight: 800;
+      margin: 28px 0;
+    }
+
+    .option-label {
+      display: block;
+      color: #aaa;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    select,
+    .quantity {
+      height: 52px;
+      background: #181b1d;
+      color: white;
+      border: 1px solid #444;
+      padding: 0 15px;
+      font-size: 14px;
+    }
+
+    select {
+      width: 100%;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #ff6a21;
+    }
+
+    .buy-area {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .quantity {
+      width: 100%;
+    }
+
+    .add-cart {
+      border: none;
+      background: #ff6a21;
+      color: #111;
+      font-weight: 900;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .add-cart:hover {
+      background: #ff7d3c;
+    }
+
+    .stock {
+      margin-top: 15px;
+      color: #69d269;
+      font-size: 13px;
+    }
+
+    .shipping {
+      margin-top: 30px;
+      padding: 20px;
+      background: #17191b;
+      border-left: 3px solid #ff6a21;
+    }
+
+    .shipping strong {
+      display: block;
+      color: #ff6a21;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .shipping p {
+      margin: 0;
+      color: #888;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .details {
+      margin-top: 80px;
+      padding-top: 60px;
+      border-top: 1px solid #292d30;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+    }
+
+    .details h2 {
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+
+    .specs {
+      margin-top: 30px;
+      border-top: 1px solid #292d30;
+    }
+
+    .spec {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 13px 0;
+      border-bottom: 1px solid #292d30;
+      font-size: 13px;
+    }
+
+    .spec span:first-child {
+      color: #777;
+    }
+
+    .spec span:last-child {
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .info-box {
+      background: #17191b;
+      border: 1px solid #292d30;
+      padding: 25px;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      color: #ff6a21;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .info-box p {
+      color: #888;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 50px 0;
+      background: #08090a;
+      border-top: 1px solid #292d30;
+    }
+
+    footer p {
+      color: #666;
+      font-size: 12px;
+    }
+
+    @media (max-width: 850px) {
+      .product-grid,
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        position: static;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .main-image {
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .main-image {
+        height: 350px;
+      }
+
+      .buy-area {
+        grid-template-columns: 80px 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+
+    <nav>
+
+      <a href="/" class="logo">
+        <span class="logo-box">IS</span>
+
+        <span>
+          INVENCO
+          <small>SOLDER</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/#shop">Shop</a>
+        <a href="/#categories">Categories</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </div>
+
+    </nav>
+
+  </div>
+</header>
+
+
+<main class="page">
+
+  <div class="container">
+
+    <div class="breadcrumbs">
+
+      <a href="/">Home</a>
+
+      &nbsp; / &nbsp;
+
+      <a href="/#shop">Shop</a>
+
+      &nbsp; / &nbsp;
+
+      <span>{product.name}</span>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <!-- IMAGE -->
+
+      <div class="gallery">
+
+        <div class="main-image">
+
+          <img
+            src={product.image}
+            alt={product.name}
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT INFORMATION -->
+
+      <div>
+
+        <div class="eyebrow">
+          {product.category}
+        </div>
+
+
+        <h1>
+          {product.name}
+        </h1>
+
+
+        <p class="description">
+          {product.description}
+        </p>
+
+
+        <div
+          class="price"
+          id="price"
+        >
+          £{product.price.toFixed(2)}
+        </div>
+
+
+        {
+          product.lengths &&
+          product.lengths.length > 0 && (
+
+            <div>
+
+              <label
+                class="option-label"
+                for="length"
+              >
+                Select Length
+              </label>
+
+              <select id="length">
+
+                {
+                  product.lengths.map((item) => (
+
+                    <option value={item.price}>
+                      {item.name} — £{item.price.toFixed(2)}
+                    </option>
+
+                  ))
+                }
+
+              </select>
+
+            </div>
+
+          )
+        }
+
+
+        <div class="buy-area">
+
+          <input
+            class="quantity"
+            type="number"
+            min="1"
+            value="1"
+          />
+
+          <button class="add-cart">
+            ADD TO CART →
+          </button>
+
+        </div>
+
+
+        <div class="stock">
+          ✓ In stock
+        </div>
+
+
+        <div class="shipping">
+
+          <strong>
+            CUT TO YOUR REQUIRED LENGTH
+          </strong>
+
+          <p>
+            Your selected length will be cut from
+            the solder wire and supplied in coil form.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- DETAILS -->
+
+    <section class="details">
+
+      <div class="details-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            PRODUCT INFORMATION
+          </div>
+
+          <h2>
+            Specifications
+          </h2>
+
+
+          <div class="specs">
+
+            {
+              Object.entries(product.specs).map(
+                ([key, value]) => (
+
+                  <div class="spec">
+
+                    <span>
+                      {key}
+                    </span>
+
+                    <span>
+                      {value}
+                    </span>
+
+                  </div>
+
+                )
+              )
+
+            }
+
+          </div>
+
+        </div>
+
+
+        <div class="info-box">
+
+          <h3>
+            SHIPPING
+          </h3>
+
+          <p>
+            Products are carefully prepared and
+            packaged for shipping.
+          </p>
+
+          <p>
+            Solder wire lengths are cut to the
+            selected size and supplied in coil form.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <div class="logo">
+
+      <span class="logo-box">
+        IS
+      </span>
+
+      <span>
+        INVENCO
+        <small>SOLDER</small>
+      </span>
+
+    </div>
+
+    <p>
+      Professional soldering and electrical supplies.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  const select =
+    document.querySelector("#length");
+
+  const price =
+    document.querySelector("#price");
+
+
+  select?.addEventListener(
+    "change",
+    () => {
+
+      const selectedPrice =
+        Number(select.value);
+
+      price.textContent =
+        `£${selectedPrice.toFixed(2)}`;
+
+    }
+  );
+
+</script>
+
+</body>
+</html>
