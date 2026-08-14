@@ -3,7 +3,7 @@ export const products = [
     name: "99C Tin/Copper Solder Wire",
     slug: "99c-tin-copper",
     description:
-      "Lead Free 99C Tin/Copper solder wire with 399 Flux 5 Core. 0.7mm diameter.",
+      "Lead Free 99C Tin/Copper solder wire with 399 Flux 5 Core. 0.7mm diameter. Available in selected lengths and supplied in coil form.",
     price: 1.89,
     image: "/products/99C.jpg",
     category: "Solder Wire",
@@ -18,13 +18,13 @@ export const products = [
     },
 
     lengths: [
-      { name: "1m", price: 1.89 },
-      { name: "2m", price: 2.29 },
-      { name: "3m", price: 2.99 },
-      { name: "4m", price: 3.49 },
-      { name: "5m", price: 4.49 },
-      { name: "7m", price: 5.99 },
-      { name: "10m", price: 8.99 }
+      { name: "1 Metre", price: 1.89 },
+      { name: "2 Metres", price: 2.29 },
+      { name: "3 Metres", price: 2.99 },
+      { name: "4 Metres", price: 3.49 },
+      { name: "5 Metres", price: 4.49 },
+      { name: "7 Metres", price: 5.99 },
+      { name: "10 Metres", price: 8.99 }
     ]
   },
 
@@ -32,7 +32,7 @@ export const products = [
     name: "Alpha-Fry SAC305 0.4mm Lead Free Solder Wire",
     slug: "alpha-fry-sac305",
     description:
-      "GreenLine Alpha-Fry SAC305 lead free solder wire with 1 Core 2.2% flux and 0.4mm diameter.",
+      "GreenLine Alpha-Fry SAC305 lead free solder wire manufactured by Alpha-Fry Technologies, a Cookson Electronics Company. Features 1 Core 2.2% flux and 0.4mm diameter.",
     price: 1.89,
     image: "/products/alpha-fry-04mm.jpg",
     category: "Solder Wire",
@@ -53,13 +53,13 @@ export const products = [
     },
 
     lengths: [
-      { name: "1m", price: 1.89 },
-      { name: "2m", price: 2.29 },
-      { name: "3m", price: 2.99 },
-      { name: "4m", price: 3.49 },
-      { name: "5m", price: 4.49 },
-      { name: "7m", price: 5.99 },
-      { name: "10m", price: 8.99 }
+      { name: "1 Metre", price: 1.89 },
+      { name: "2 Metres", price: 2.29 },
+      { name: "3 Metres", price: 2.99 },
+      { name: "4 Metres", price: 3.49 },
+      { name: "5 Metres", price: 4.49 },
+      { name: "7 Metres", price: 5.99 },
+      { name: "10 Metres", price: 8.99 }
     ]
   },
 
@@ -83,12 +83,13 @@ export const products = [
       "Barcode": "00035 54562 0",
       "Type": "Lead Free Solder Wire"
     }
-  }
-    {
+  },
+
+  {
     name: "60% Tin 0.9mm Rosin Flux Core Solder Wire",
     slug: "60-tin-09mm-rosin-flux-solder-wire",
     description:
-      "High-quality solder wire designed for hobbyists, electronics work, repairs and general soldering applications. Features a rosin-fluxed core for easy soldering and does not require cleaning after soldering. The flux residue is non-corrosive, making it suitable for a wide range of electronic applications. Your chosen length is cut to size and supplied in coil form, NOT on a roll or spool.",
+      "High-quality solder wire designed for hobbyists, electronics work, repairs and general soldering applications. Features a rosin-fluxed core for easy soldering and does not require cleaning after soldering. The flux residue is non-corrosive. Your chosen length is cut to size and supplied in coil form, NOT on a roll or spool.",
 
     price: 3.25,
 
@@ -116,5 +117,5 @@ export const products = [
       { name: "7 Metres", price: 6.95 },
       { name: "10 Metres", price: 8.54 }
     ]
-  },
+  }
 ];
