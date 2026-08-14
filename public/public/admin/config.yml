@@ -1,0 +1,6 @@
+backend:
+  name: github
+  branch: main
+  repo: invenco-solder/astro-blog-starter-template
+  base_url: https://invenco-decap-proxy.leathersenseuk.workers.dev
+  auth_endpoint: /auth
