@@ -2,6 +2,7 @@ backend:
   name: github
   repo: invenco-solder/astro-blog-starter-template
   branch: main
+  base_url: https://invenco-decap-proxy.leathersenseuk.workers.dev
 
 media_folder: "public/products"
 public_folder: "/products"
