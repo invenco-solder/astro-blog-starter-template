@@ -62,13 +62,30 @@ export const products = [
       { name: "10m", price: 8.99 }
     ]
   }
-  {
-  name: "YOUR PRODUCT NAME",
-  slug: "your-product-name",
-  description:
-    "Your product description goes here.",
-  price: 0.00,
-  image: "/products/product3.jpg",
+   {
+    name: "Alpha-Fry SAC305 250g Lead Free Solder Wire",
+    slug: "alpha-fry-sac305-250g",
+    description:
+      "GreenLine Lead Free Solder Wire manufactured by Alpha-Fry Technologies, a Cookson Electronics Company. SAC305 alloy with 1 Core 2.2% flux, 0.4mm diameter and 0.25kg (250g) roll weight. Alpha FT-2002 ROSIN FREE. Made in the EU.",
+    price: 13.99,
+    image: "/products/s-I1600 (2).webp",
+    category: "Solder Wire",
+
+    specs: {
+      "Brand": "GreenLine",
+      "Manufacturer": "Alpha-Fry Technologies",
+      "Company": "A Cookson Electronics Company",
+      "Alloy": "SAC305",
+      "Flux": "1 Core 2.2%",
+      "Diameter": "0.4mm",
+      "Weight": "0.25kg (250g)",
+      "Batch No.": "15C809",
+      "Item No.": "53274",
+      "Product": "Alpha FT-2002 ROSIN FREE",
+      "Standard": "ISO 12224-1/2.2.3",
+      "Origin": "Made in the EU"
+    }
+  }
   category: "Solder Wire",
 
   specs: {
