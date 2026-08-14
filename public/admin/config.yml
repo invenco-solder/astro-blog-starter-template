@@ -3,6 +3,7 @@ backend:
   repo: invenco-solder/astro-blog-starter-template
   branch: main
   base_url: https://invenco-decap-proxy.leathersenseuk.workers.dev
+  auth_endpoint: /auth
 
 media_folder: "public/products"
 public_folder: "/products"
