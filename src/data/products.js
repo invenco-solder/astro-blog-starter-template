@@ -3,7 +3,7 @@ export const products = [
     name: "99C Tin/Copper Solder Wire",
     slug: "99c-tin-copper",
     description:
-      "Lead Free 99C Tin/Copper solder wire with 399 Flux 5 Core. 0.7mm diameter.",
+      "Lead Free 99C Tin/Copper solder wire with 399 Flux 5 Core. Available in 0.7mm diameter. Supplied cut to your selected length and shipped in coil form.",
     price: 1.89,
     image: "/products/99C.jpg",
     category: "Solder Wire",
@@ -14,7 +14,8 @@ export const products = [
       "Diameter": "0.7mm",
       "Standard": "EN 29463 S-Sn89Cu1",
       "Batch": "1476/811",
-      "Original Weight": "500g"
+      "Original Weight": "500g",
+      "Product Type": "Lead Free Solder Wire"
     },
 
     lengths: [
@@ -32,7 +33,7 @@ export const products = [
     name: "Alpha-Fry SAC305 0.4mm Lead Free Solder Wire",
     slug: "alpha-fry-sac305",
     description:
-      "GreenLine Alpha-Fry SAC305 lead free solder wire with 1 Core 2.2% flux and 0.4mm diameter.",
+      "GreenLine Alpha-Fry SAC305 lead free solder wire manufactured by Alpha-Fry Technologies, a Cookson Electronics Company. Features 1 Core 2.2% flux and 0.4mm diameter. Supplied cut to your selected length and shipped in coil form.",
     price: 1.89,
     image: "/products/alpha-fry-04mm.jpg",
     category: "Solder Wire",
@@ -44,12 +45,12 @@ export const products = [
       "Alloy": "SAC305",
       "Flux": "1 Core 2.2%",
       "Diameter": "0.4mm",
-      "Original Weight": "250g",
+      "Original Weight": "0.25kg (250g)",
       "Batch No.": "15C809",
       "Item No.": "53274",
       "Product": "Alpha FT-2002 ROSIN FREE",
       "Standard": "ISO 12224-1/2.2.3",
-      "Manufactured": "Made in the EU"
+      "Origin": "Made in the EU"
     },
 
     lengths: [
@@ -61,12 +62,13 @@ export const products = [
       { name: "7m", price: 5.99 },
       { name: "10m", price: 8.99 }
     ]
-  }
-   {
+  },
+
+  {
     name: "Alpha-Fry SAC305 250g Lead Free Solder Wire",
     slug: "alpha-fry-sac305-250g",
     description:
-      "GreenLine Lead Free Solder Wire manufactured by Alpha-Fry Technologies, a Cookson Electronics Company. SAC305 alloy with 1 Core 2.2% flux, 0.4mm diameter and 0.25kg (250g) roll weight. Alpha FT-2002 ROSIN FREE. Made in the EU.",
+      "GreenLine Lead Free Solder Wire manufactured by Alpha-Fry Technologies, a Cookson Electronics Company. SAC305 alloy with 1 Core 2.2% flux and 0.4mm diameter. This is a complete 250g roll of Alpha FT-2002 ROSIN FREE solder wire. Made in the EU.",
     price: 13.99,
     image: "/products/s-I1600 (2).webp",
     category: "Solder Wire",
@@ -86,45 +88,4 @@ export const products = [
       "Origin": "Made in the EU"
     }
   }
-  category: "Solder Wire",
-
-  specs: {
-    "Diameter": "0.7mm",
-    "Material": "Tin/Copper",
-    "Flux": "5 Core"
-  },
-
-  lengths: [
-    { name: "1m", price: 1.89 },
-    { name: "2m", price: 2.29 },
-    { name: "3m", price: 2.99 }
-  ]
-    {
-    name: "Alpha-Fry SAC305 250g Lead Free Solder Wire",
-    slug: "alpha-fry-sac305-250g",
-    description:
-      "GreenLine Lead Free Solder Wire manufactured by Alpha-Fry Technologies, a Cookson Electronics Company. SAC305 alloy with 1 Core 2.2% flux, 0.4mm diameter and 0.25kg (250g) roll weight. Alpha FT-2002 ROSIN FREE. Made in the EU.",
-
-    price: 13.99,
-
-    image: "/products/s-I1600 (2).webp",
-
-    category: "Solder Wire",
-
-    specs: {
-      "Brand": "GreenLine",
-      "Manufacturer": "Alpha-Fry Technologies",
-      "Company": "A Cookson Electronics Company",
-      "Alloy": "SAC305",
-      "Flux": "1 Core 2.2%",
-      "Diameter": "0.4mm",
-      "Weight": "0.25kg (250g)",
-      "Batch No.": "15C809",
-      "Item No.": "53274",
-      "Product": "Alpha FT-2002 ROSIN FREE",
-      "Standard": "ISO 12224-1/2.2.3",
-      "Origin": "Made in the EU"
-    }
-  },
-},
 ];
