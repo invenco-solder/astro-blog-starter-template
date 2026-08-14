@@ -1,0 +1,670 @@
+---
+const lengths = [
+  { length: "1m", price: 1.89 },
+  { length: "2m", price: 2.29 },
+  { length: "3m", price: 2.99 },
+  { length: "4m", price: 3.49 },
+  { length: "5m", price: 4.49 },
+  { length: "7m", price: 5.99 },
+  { length: "10m", price: 8.99 },
+];
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Alpha-Fry SAC305 0.4mm Lead Free Solder Wire | Invenco Solder</title>
+
+  <meta
+    name="description"
+    content="Alpha-Fry GreenLine SAC305 lead free solder wire, 0.4mm diameter, Alpha FT-2002 Rosin Free, 1 Core 2.2% flux."
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #101214;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      border-bottom: 1px solid #292d30;
+      background: #101214;
+    }
+
+    .container {
+      width: min(1150px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .logo-box {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: #ff6a21;
+      color: #111;
+      font-weight: 900;
+    }
+
+    .logo small {
+      display: block;
+      color: #ff6a21;
+      font-size: 8px;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover {
+      color: #ff6a21;
+    }
+
+    .product-page {
+      padding: 80px 0 120px;
+    }
+
+    .breadcrumbs {
+      color: #777;
+      font-size: 12px;
+      margin-bottom: 35px;
+    }
+
+    .breadcrumbs a:hover {
+      color: #ff6a21;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .gallery {
+      position: sticky;
+      top: 30px;
+    }
+
+    .main-image {
+      background: #181b1d;
+      border: 1px solid #303438;
+      height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .thumbnails {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .thumbnail {
+      height: 130px;
+      background: #181b1d;
+      border: 1px solid #303438;
+      overflow: hidden;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .eyebrow {
+      color: #ff6a21;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 15px 0;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: .95;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+    }
+
+    .subtitle {
+      color: #888;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .price {
+      color: #ff6a21;
+      font-size: 34px;
+      font-weight: 800;
+      margin: 30px 0;
+    }
+
+    .option-label {
+      display: block;
+      color: #aaa;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 17px;
+      background: #181b1d;
+      color: white;
+      border: 1px solid #444;
+      font-size: 15px;
+      outline: none;
+    }
+
+    select:focus {
+      border-color: #ff6a21;
+    }
+
+    .buy-area {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 12px;
+    }
+
+    .quantity {
+      padding: 17px;
+      background: #181b1d;
+      border: 1px solid #444;
+      color: white;
+      font-size: 15px;
+    }
+
+    .add-cart {
+      border: none;
+      background: #ff6a21;
+      color: #111;
+      font-weight: 900;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .add-cart:hover {
+      background: #ff7d3c;
+    }
+
+    .info {
+      margin-top: 45px;
+      padding-top: 30px;
+      border-top: 1px solid #292d30;
+    }
+
+    .info h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .info p {
+      color: #888;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .specs {
+      margin-top: 25px;
+      border-top: 1px solid #292d30;
+    }
+
+    .spec {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid #292d30;
+      font-size: 13px;
+    }
+
+    .spec span:first-child {
+      color: #777;
+    }
+
+    .spec span:last-child {
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .shipping {
+      margin-top: 30px;
+      padding: 20px;
+      border-left: 3px solid #ff6a21;
+      background: #17191b;
+    }
+
+    .shipping strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .shipping p {
+      margin: 0;
+    }
+
+    footer {
+      padding: 50px 0;
+      background: #08090a;
+      border-top: 1px solid #292d30;
+    }
+
+    footer p {
+      color: #666;
+      font-size: 12px;
+    }
+
+    @media (max-width: 850px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        position: static;
+      }
+
+      .main-image {
+        height: 450px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .buy-area {
+        grid-template-columns: 80px 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+
+      <a href="/" class="logo">
+        <span class="logo-box">IS</span>
+
+        <span>
+          INVENCO
+          <small>SOLDER</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/#shop">Shop</a>
+        <a href="/#categories">Categories</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+
+<main class="product-page">
+
+  <div class="container">
+
+    <div class="breadcrumbs">
+      <a href="/">Home</a>
+      &nbsp; / &nbsp;
+      <a href="/#shop">Shop</a>
+      &nbsp; / &nbsp;
+      Alpha-Fry SAC305 0.4mm
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <!-- PRODUCT IMAGES -->
+
+      <div class="gallery">
+
+        <div class="main-image">
+
+          <img
+            src="/products/alpha-fry-04mm.jpg"
+            alt="Alpha-Fry SAC305 0.4mm Lead Free Solder Wire"
+          />
+
+        </div>
+
+
+        <div class="thumbnails">
+
+          <div class="thumbnail">
+
+            <img
+              src="/products/alpha-fry-04mm.jpg"
+              alt="Alpha-Fry SAC305 solder spool"
+            />
+
+          </div>
+
+          <div class="thumbnail">
+
+            <img
+              src="/products/alpha-fry-04mm-2.jpg"
+              alt="Alpha-Fry SAC305 solder wire"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT DETAILS -->
+
+      <div>
+
+        <div class="eyebrow">
+          GREENLINE / ALPHA-FRY TECHNOLOGIES
+        </div>
+
+
+        <h1>
+          Alpha-Fry SAC305
+          <br />
+          0.4mm Solder Wire
+        </h1>
+
+
+        <p class="subtitle">
+
+          Lead Free solder wire manufactured by
+          Alpha-Fry Technologies, a Cookson Electronics
+          company.
+
+        </p>
+
+
+        <div class="price" id="price">
+          £1.89
+        </div>
+
+
+        <label class="option-label" for="length">
+          Select Length
+        </label>
+
+
+        <select id="length">
+
+          {lengths.map((item) => (
+
+            <option value={item.price}>
+              {item.length} — £{item.price.toFixed(2)}
+            </option>
+
+          ))}
+
+        </select>
+
+
+        <div class="buy-area">
+
+          <input
+            class="quantity"
+            type="number"
+            value="1"
+            min="1"
+          />
+
+          <button class="add-cart">
+            ADD TO CART →
+          </button>
+
+        </div>
+
+
+        <div class="shipping">
+
+          <strong>
+            Supplied as a coil
+          </strong>
+
+          <p>
+
+            Your selected length will be cut from
+            the solder wire and supplied securely
+            in coil form. For example, selecting
+            5m means 5 metres of solder wire will
+            be cut and supplied as a coil.
+
+          </p>
+
+        </div>
+
+
+        <div class="info">
+
+          <h2>
+            Product Description
+          </h2>
+
+
+          <p>
+
+            GreenLine Lead Free Solder Wire from
+            Alpha-Fry Technologies.
+
+            This solder wire uses the SAC305 alloy
+            and is supplied with a 1 Core 2.2% flux
+            formulation.
+
+            The product is Alpha FT-2002 ROSIN FREE
+            and is manufactured in the EU.
+
+          </p>
+
+
+          <div class="specs">
+
+
+            <div class="spec">
+              <span>Product</span>
+              <span>Lead Free Solder Wire</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Brand</span>
+              <span>GreenLine</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Manufacturer</span>
+              <span>Alpha-Fry Technologies</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Company</span>
+              <span>A Cookson Electronics Company</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Alloy</span>
+              <span>SAC305</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Flux</span>
+              <span>1 Core 2.2%</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Diameter</span>
+              <span>0.4 mm</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Original Weight</span>
+              <span>0.25 kg / 250g</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Batch No.</span>
+              <span>15C809</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Item No.</span>
+              <span>53274</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Product</span>
+              <span>Alpha FT-2002 ROSIN FREE</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Standard</span>
+              <span>ISO 12224-1/2.2.3</span>
+            </div>
+
+
+            <div class="spec">
+              <span>Country of Manufacture</span>
+              <span>Made in the EU</span>
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <div class="logo">
+
+      <span class="logo-box">
+        IS
+      </span>
+
+      <span>
+        INVENCO
+        <small>SOLDER</small>
+      </span>
+
+    </div>
+
+    <p>
+      Professional soldering and electrical supplies.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+  const lengthSelect =
+    document.querySelector("#length");
+
+  const price =
+    document.querySelector("#price");
+
+  lengthSelect?.addEventListener("change", () => {
+
+    const selectedPrice =
+      Number(lengthSelect.value);
+
+    price.textContent =
+      `£${selectedPrice.toFixed(2)}`;
+
+  });
+</script>
+
+</body>
+</html>
