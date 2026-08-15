@@ -1,5 +1,7 @@
 ---
-import { products } from "../data/products";
+import { getCollection } from "astro:content";
+
+const products = await getCollection("products");
 ---
 
 <!doctype html>
